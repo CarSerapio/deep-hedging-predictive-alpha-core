@@ -1,0 +1,11 @@
+{
+  "extends": "benchmark_entropic.yaml",
+  "experiment": {
+    "name": "benchmark_entropic_unit_spot",
+    "tag": "benchmark"
+  },
+  "market": {
+    "s0": 1.0,
+    "strike": 1.0
+  }
+}

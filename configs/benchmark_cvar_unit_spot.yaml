@@ -1,0 +1,11 @@
+{
+  "extends": "benchmark_cvar.yaml",
+  "experiment": {
+    "name": "benchmark_cvar_unit_spot",
+    "tag": "benchmark"
+  },
+  "market": {
+    "s0": 1.0,
+    "strike": 1.0
+  }
+}

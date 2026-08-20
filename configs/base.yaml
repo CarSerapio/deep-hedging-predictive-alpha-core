@@ -1,0 +1,59 @@
+{
+  "experiment": {
+    "name": "base",
+    "tag": "benchmark",
+    "description": "Base configuration for deep hedging predictive alpha experiments.",
+    "with_liability": true,
+    "regime_label": "in_sample"
+  },
+  "market": {
+    "s0": 100.0,
+    "mu": 0.05,
+    "sigma": 0.20,
+    "maturity": 0.08,
+    "dt": 0.004,
+    "n_steps": 20,
+    "strike": 100.0
+  },
+  "paths": {
+    "train_paths": 100000,
+    "val_paths": 20000,
+    "test_paths": 100000,
+    "seed": 7
+  },
+  "model": {
+    "hidden_layers": 4,
+    "hidden_width": 32,
+    "activation": "relu",
+    "feature_names": ["spot", "time_to_maturity", "previous_hedge"]
+  },
+  "signal": {
+    "enabled": false,
+    "kind": "ar1_drift",
+    "ar1_phi": 0.9,
+    "innovation_scale": 0.25,
+    "drift_scale": 0.05,
+    "initial_value": 0.0
+  },
+  "training": {
+    "batch_size": 2048,
+    "epochs": 100,
+    "learning_rate": 0.001,
+    "gradient_clip": 1.0,
+    "optimizer": "adam",
+    "patience": 10
+  },
+  "costs": {
+    "proportional_rate": 0.0
+  },
+  "risk": {
+    "kind": "entropic",
+    "theta": 1.0,
+    "alpha": null
+  },
+  "splits": {
+    "train": 0.70,
+    "validation": 0.15,
+    "test": 0.15
+  }
+}

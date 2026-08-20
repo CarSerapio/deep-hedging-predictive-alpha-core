@@ -1,0 +1,20 @@
+{
+  "extends": "entropic_no_liability_unit_spot_cost_0p0025.yaml",
+  "experiment": {
+    "name": "predictive_signal_no_liability_unit_spot_cost_0p0025",
+    "tag": "predictive_extension",
+    "description": "Predictive-signal extension of the no-liability unit-spot entropic regime with a 0.25 percent proportional transaction-cost rate.",
+    "regime_label": "predictive_signal_in_sample"
+  },
+  "model": {
+    "feature_names": ["spot", "time_to_maturity", "previous_hedge", "predictive_signal"]
+  },
+  "signal": {
+    "enabled": true,
+    "kind": "ar1_drift",
+    "ar1_phi": 0.9,
+    "innovation_scale": 0.25,
+    "drift_scale": 0.05,
+    "initial_value": 0.0
+  }
+}

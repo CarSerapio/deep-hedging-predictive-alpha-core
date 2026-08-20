@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deep-hedging-predictive-alpha-core"
+version = "0.1.0"
+description = "Minimal reproducible implementation of the deep hedging predictive alpha methodology."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "numpy>=1.26,<3",
+]
+
+[project.optional-dependencies]
+tensorflow = [
+  "tensorflow>=2.16,<2.20",
+]
+
+[project.scripts]
+dh-train-entropic = "workflows.train_entropic:main"
+dh-train-cvar = "workflows.train_cvar:main"
+dh-build-holdout-regimes = "workflows.holdout_regimes:main"
+dh-evaluate-holdouts = "workflows.holdout_evaluation:main"
+dh-explain-benchmarks = "workflows.benchmark_explanations:main"
+dh-anti-spurious-controls = "workflows.anti_spurious_controls:main"
+dh-predictive-signal-controls = "workflows.predictive_signal_controls:main"
+dh-transaction-cost-sweep = "workflows.transaction_cost_sweep:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["config"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = [
+  "baselines*",
+  "evaluation*",
+  "finance*",
+  "payoffs*",
+  "policies*",
+  "risk*",
+  "simulators*",
+  "training*",
+  "utils*",
+  "workflows*",
+]

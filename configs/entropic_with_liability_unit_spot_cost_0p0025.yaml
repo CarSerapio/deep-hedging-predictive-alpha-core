@@ -1,0 +1,11 @@
+{
+  "extends": "entropic_with_liability_unit_spot.yaml",
+  "experiment": {
+    "name": "entropic_with_liability_unit_spot_cost_0p0025",
+    "description": "With-liability entropic training in the unit-spot regime with a 0.25 percent proportional transaction-cost rate.",
+    "regime_label": "with_liability_unit_spot_cost_0p0025"
+  },
+  "costs": {
+    "proportional_rate": 0.0025
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "base.yaml",
+  "experiment": {
+    "name": "benchmark_entropic",
+    "tag": "benchmark"
+  },
+  "risk": {
+    "kind": "entropic",
+    "theta": 1.0,
+    "alpha": null
+  }
+}

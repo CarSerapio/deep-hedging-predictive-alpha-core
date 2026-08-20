@@ -1,0 +1,11 @@
+{
+  "extends": "entropic_no_liability_unit_spot.yaml",
+  "experiment": {
+    "name": "entropic_no_liability_unit_spot_frictionless",
+    "description": "No-liability entropic training in the unit-spot regime with zero transaction costs.",
+    "regime_label": "no_liability_unit_spot_frictionless"
+  },
+  "costs": {
+    "proportional_rate": 0.0
+  }
+}

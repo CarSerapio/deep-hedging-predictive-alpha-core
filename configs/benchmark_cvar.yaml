@@ -1,0 +1,12 @@
+{
+  "extends": "base.yaml",
+  "experiment": {
+    "name": "benchmark_cvar",
+    "tag": "benchmark"
+  },
+  "risk": {
+    "kind": "cvar",
+    "theta": null,
+    "alpha": 0.5
+  }
+}

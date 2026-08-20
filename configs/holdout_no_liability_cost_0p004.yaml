@@ -1,0 +1,15 @@
+{
+  "extends": "entropic_no_liability_unit_spot_cost_0p0025.yaml",
+  "experiment": {
+    "name": "holdout_no_liability_cost_0p004",
+    "tag": "holdout",
+    "description": "No-liability holdout regime with a higher proportional transaction-cost rate than the in-sample 0.25 percent regime.",
+    "regime_label": "holdout_cost_0p004"
+  },
+  "costs": {
+    "proportional_rate": 0.004
+  },
+  "paths": {
+    "seed": 25019
+  }
+}

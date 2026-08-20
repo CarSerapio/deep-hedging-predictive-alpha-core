@@ -1,0 +1,12 @@
+{
+  "extends": "entropic_no_liability_unit_spot_cost_0p0025.yaml",
+  "experiment": {
+    "name": "entropic_no_liability_unit_spot_zero_drift_cost_0p0025",
+    "tag": "control",
+    "description": "Zero-drift no-liability entropic control in the unit-spot regime with a 0.25 percent proportional transaction-cost rate.",
+    "regime_label": "zero_drift_control"
+  },
+  "market": {
+    "mu": 0.0
+  }
+}

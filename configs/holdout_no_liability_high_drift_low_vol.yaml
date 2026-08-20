@@ -1,0 +1,16 @@
+{
+  "extends": "entropic_no_liability_unit_spot_cost_0p0025.yaml",
+  "experiment": {
+    "name": "holdout_no_liability_high_drift_low_vol",
+    "tag": "holdout",
+    "description": "No-liability holdout regime with higher drift and lower volatility than the in-sample unit-spot regime.",
+    "regime_label": "holdout_high_drift_low_vol"
+  },
+  "market": {
+    "mu": 0.1,
+    "sigma": 0.15
+  },
+  "paths": {
+    "seed": 25039
+  }
+}
