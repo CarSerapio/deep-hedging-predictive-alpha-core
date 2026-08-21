@@ -63,22 +63,10 @@ After installation, you can either run the workflow files directly from the repo
 ### 1. Train the entropic benchmark
 
 ```powershell
-python src/workflows/train_entropic.py --config configs/benchmark_entropic.yaml --theta 1.0 --output-dir artifacts/entropic_training
-```
-
-Console script:
-
-```powershell
 dh-train-entropic --config configs/benchmark_entropic.yaml --theta 1.0 --output-dir artifacts/entropic_training
 ```
 
 ### 2. Train the CVaR benchmark
-
-```powershell
-python src/workflows/train_cvar.py --config configs/benchmark_cvar.yaml --alpha 0.5 --output-dir artifacts/cvar_training
-```
-
-Console script:
 
 ```powershell
 dh-train-cvar --config configs/benchmark_cvar.yaml --alpha 0.5 --output-dir artifacts/cvar_training
@@ -87,22 +75,10 @@ dh-train-cvar --config configs/benchmark_cvar.yaml --alpha 0.5 --output-dir arti
 ### 3. Define holdout regimes
 
 ```powershell
-python src/workflows/holdout_regimes.py --in-sample-config configs/entropic_no_liability_unit_spot_cost_0p0025.yaml --output-dir artifacts/holdout_regimes
-```
-
-Console script:
-
-```powershell
 dh-build-holdout-regimes --in-sample-config configs/entropic_no_liability_unit_spot_cost_0p0025.yaml --output-dir artifacts/holdout_regimes
 ```
 
 ### 4. Evaluate a saved policy on holdouts
-
-```powershell
-python src/workflows/holdout_evaluation.py --holdout-summary artifacts/holdout_regimes/summary.json --policy-run-dir artifacts/entropic_no_liability_unit_spot_cost_0p0025/theta_1 --output-dir artifacts/holdout_evaluation
-```
-
-Console script:
 
 ```powershell
 dh-evaluate-holdouts --holdout-summary artifacts/holdout_regimes/summary.json --policy-run-dir artifacts/entropic_no_liability_unit_spot_cost_0p0025/theta_1 --output-dir artifacts/holdout_evaluation
@@ -111,22 +87,10 @@ dh-evaluate-holdouts --holdout-summary artifacts/holdout_regimes/summary.json --
 ### 5. Explain holdout performance with benchmark proxies
 
 ```powershell
-python src/workflows/benchmark_explanations.py --holdout-evaluation-summary artifacts/holdout_evaluation/summary.json --output-dir artifacts/benchmark_explanations
-```
-
-Console script:
-
-```powershell
 dh-explain-benchmarks --holdout-evaluation-summary artifacts/holdout_evaluation/summary.json --output-dir artifacts/benchmark_explanations
 ```
 
 ### 6. Run anti-spurious controls
-
-```powershell
-python src/workflows/anti_spurious_controls.py --output-dir artifacts/anti_spurious_controls
-```
-
-Console script:
 
 ```powershell
 dh-anti-spurious-controls --output-dir artifacts/anti_spurious_controls
@@ -135,22 +99,10 @@ dh-anti-spurious-controls --output-dir artifacts/anti_spurious_controls
 ### 7. Evaluate predictive-signal controls
 
 ```powershell
-python src/workflows/predictive_signal_controls.py --holdout-evaluation-summary artifacts/holdout_evaluation/summary.json --output-dir artifacts/predictive_signal_controls
-```
-
-Console script:
-
-```powershell
 dh-predictive-signal-controls --holdout-evaluation-summary artifacts/holdout_evaluation/summary.json --output-dir artifacts/predictive_signal_controls
 ```
 
 ### 8. Sweep transaction-cost regimes
-
-```powershell
-python src/workflows/transaction_cost_sweep.py --output-dir artifacts/transaction_cost_sweep
-```
-
-Console script:
 
 ```powershell
 dh-transaction-cost-sweep --output-dir artifacts/transaction_cost_sweep
