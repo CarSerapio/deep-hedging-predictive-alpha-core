@@ -1,6 +1,6 @@
 # Deep Hedging Predictive Alpha Core
 
-This repository is the complete implementation of the methodology in "Deep Hedging, Statistical Arbitrage, and the Interpretation of Apparent Alpha in a Canonical GBM Benchmark". It includes:
+This repository is the complete implementation of the methodology in ["Deep Hedging, Statistical Arbitrage, and the Interpretation of Apparent Alpha in a Canonical GBM Benchmark"](https://carolineserapio.vercel.app/Deep-Hedging-Predictive-Alpha-Paper.pdf). It includes:
 
 - configuration loading and validation
 - GBM market simulation with an optional predictive signal
